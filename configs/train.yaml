@@ -1,0 +1,35 @@
+MODEL:
+  NUM_CLASSES: 10
+
+WANDB:
+  ENABLE: False
+  GROUP: "MNIST"
+  PROJECT: "PuzzLayer"
+  ENTITY: "pinlab-sapienza"
+
+DATASETS:
+  TRAIN: "mnist"   # mnist, cifar10, cifar100, imagenette, imagenet
+
+SOLVER:
+ GPUS: [0]
+ NUM_WORKERS: 8
+ BASE_LR: 0.1
+ MILESTONE: [10,20]
+ BATCH_SIZE: 300
+ EPOCHS: 20
+ WEIGHT_DECAY: 0.0005
+ MOMENTUM: 0.9
+#  LR_METHOD: "poly"
+#  LR_POWER: 0.5
+#  MOMENTUM: 0.9
+#  ETA_MIN: 1e-7
+#  WARMUP_ITERS: 200
+ BATCH_SIZE_VAL: 100
+ 
+
+
+NAME: "mnist"
+OUTPUT_DIR: "results/3_layer_mnist_norm_init1/mnist/"
+resume: ""
+SEED: -1
+DEBUG: 0
